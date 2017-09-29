@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <AssemblyName>Plugin.Logging</AssemblyName>
+    <RootNamespace>Plugin.Logging</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>False</DebugSymbols>
+    <DocumentationFile>bin\Release\netstandard1.0\Plugin.Logging.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin.Logging.Abstractions\Plugin.Logging.Abstractions.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\Plugin.Logging.Shared\Plugin.Logging.Shared.projitems" Label="Shared" />
+
+</Project>
