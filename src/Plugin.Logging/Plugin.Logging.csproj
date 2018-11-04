@@ -1,21 +1,44 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.6.47">
+    
+    <PropertyGroup>
+        <TargetFrameworks>netstandard1.0;netstandard2.0;MonoAndroid44;Xamarin.iOS10</TargetFrameworks>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <AssemblyName>Plugin.Logging</AssemblyName>
+        <RootNamespace>Plugin.Logging</RootNamespace>
+        <PackageId>Xam.Plugins.Logging</PackageId>
+        <Version>1.1.0</Version>
+        <Summary>Cross platform logging for Xamarin.iOS, Xamarin.Android and Xamarin.Forms</Summary>
+        <PackageTags>xamarin, logging, plugin for xamarin, plugin, android, xamarin.forms, ios</PackageTags>
+        <Title>Logging Plugin for Xamarin</Title>
+        <Description>Logging Plugin for Xamarin provides a consistent, cross platform logging plugin on Android and iOS.</Description>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Nikolaj Hesselholt Skov</Authors>
+        <Owners>Nikolaj Hesselholt Skov</Owners>
+        <Product>$(AssemblyName) ($(TargetFramework))</Product>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <AssemblyFileVersion>1.1.0.0</AssemblyFileVersion>
+        <Copyright>© Nikolaj Hesselholt Skov. All rights reserved.</Copyright>
+        <RepositoryUrl>https://github.com/nikolaj/LoggingPlugin</RepositoryUrl>
+        <PackageReleaseNotes>https://github.com/nikolajskov/LoggingPlugin/blob/master/CHANGELOG.md</PackageReleaseNotes>
+        <PackageLicenseUrl>https://github.com/nikolajskov/LoggingPlugin/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/nikolaj/LoggingPlugin</PackageProjectUrl>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
-    <AssemblyName>Plugin.Logging</AssemblyName>
-    <RootNamespace>Plugin.Logging</RootNamespace>
-  </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="**\*.shared.cs" />
+    </ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DebugType>none</DebugType>
-    <DebugSymbols>False</DebugSymbols>
-    <DocumentationFile>bin\Release\netstandard1.0\Plugin.Logging.xml</DocumentationFile>
-  </PropertyGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
+        <Compile Include="**\*.netstandard.cs" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Plugin.Logging.Abstractions\Plugin.Logging.Abstractions.csproj" />
-  </ItemGroup>
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+        <Compile Include="**\*.android.cs" />
+    </ItemGroup>
 
-  <Import Project="..\Plugin.Logging.Shared\Plugin.Logging.Shared.projitems" Label="Shared" />
-
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+        <Compile Include="**\*.ios.cs" />
+    </ItemGroup>
+    
 </Project>
