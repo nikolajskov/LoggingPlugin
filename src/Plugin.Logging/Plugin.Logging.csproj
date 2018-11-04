@@ -6,7 +6,7 @@
         <AssemblyName>Plugin.Logging</AssemblyName>
         <RootNamespace>Plugin.Logging</RootNamespace>
         <PackageId>Xam.Plugins.Logging</PackageId>
-        <Version>1.1.0</Version>
+        <Version>1.1.1</Version>
         <Summary>Cross platform logging for Xamarin.iOS, Xamarin.Android and Xamarin.Forms</Summary>
         <PackageTags>xamarin, logging, plugin for xamarin, plugin, android, xamarin.forms, ios</PackageTags>
         <Title>Logging Plugin for Xamarin</Title>
@@ -18,11 +18,11 @@
         <AssemblyVersion>1.1.0.0</AssemblyVersion>
         <AssemblyFileVersion>1.1.0.0</AssemblyFileVersion>
         <Copyright>© Nikolaj Hesselholt Skov. All rights reserved.</Copyright>
-        <RepositoryUrl>https://github.com/nikolaj/LoggingPlugin</RepositoryUrl>
+        <RepositoryUrl>https://github.com/nikolajskov/LoggingPlugin</RepositoryUrl>
         <PackageReleaseNotes>https://github.com/nikolajskov/LoggingPlugin/blob/master/CHANGELOG.md</PackageReleaseNotes>
         <PackageLicenseUrl>https://github.com/nikolajskov/LoggingPlugin/blob/master/LICENSE</PackageLicenseUrl>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <PackageProjectUrl>https://github.com/nikolaj/LoggingPlugin</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/nikolajskov/LoggingPlugin</PackageProjectUrl>
     </PropertyGroup>
 
     <ItemGroup>
